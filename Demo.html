@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Management System</h1>
+    <form id="stud">
+        <section>
+            <label>Enter the Name <input type="text" required placeholder="StudentName" id="name" > </label><br>
+            <label>Enter the RollNumber  <input type="number" min="1" id="rollno" required></label><br>
+            <label>Enter the Marks  <input type="text" required placeholder="35 , 54" id="marks"></label><br>
+            
+            <input type="submit" value="Add Student">
 
+        </section>
+        
+    </form>
+    <section>
+        <input type="search" placeholder="search for students" id="search">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Roll No</th>
+                        <th>Name</th>
+                        <th>Marks</th>
+                        <th>Average</th>
+                        <th>Grade</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </section>
+        </div>
+        <script src="demo.js"></script>
+</body>
+</html>
