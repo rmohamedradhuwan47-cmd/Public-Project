@@ -9,11 +9,12 @@
 <body>
     <div class="container">
         <h1>Student Management System</h1>
+        <hr>
     <form id="stud">
         <section>
             <label>Enter the Name <input type="text" required placeholder="StudentName" id="name" > </label><br>
-            <label>Enter the RollNumber  <input type="number" min="1" id="rollno" required></label><br>
-            <label>Enter the Marks  <input type="text" required placeholder="35 , 54" id="marks"></label><br>
+            <label>Enter the RollNumber  <input type="number" min="1" id="rollno" placeholder="Roll Number" required></label><br>
+            <label>Enter the Marks  <input type="text" required placeholder="35,54" id="marks"></label><br>
             
             <input type="submit" value="Add Student" id="submit">
 
@@ -30,15 +31,10 @@
                         <th>Marks -</th>
                         <th>Average -</th>
                         <th>Grade -</th>
-                        <th>Action </th>
-                        
-                    </tr>
-                    
+                        <th>Action </th>                       
+                    </tr>                    
                 </thead>
-                <tbody id="tbody">
-                    <br>
-
-                </tbody>
+                <tbody id="tbody"></tbody>
             </table>
         </section>
         </div>
