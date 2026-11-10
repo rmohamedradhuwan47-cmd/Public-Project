@@ -16,6 +16,8 @@ const username = document.getElementById("name");
 const rollnumber = document.getElementById("rollno");
 const usermarks = document.getElementById("marks");
 const tablelist = document.getElementById("tbody");
+const errorMsg = document.getElementById("errorMsg");
+const errorMarks = document.getElementById("errorMarks");
 // logging the references to the console for debugging purposes
 console.log(form);
 console.log(username);
@@ -26,6 +28,14 @@ console.log(tablelist);
 form.addEventListener("submit",function(event){
     // preventing the default form submission behavior
     event.preventDefault();
+    errorMsg.textContent = "";
+    errorMarks.textContent = "";
+    if(username.value.trim()===""){
+        errorMsg.textContent = "Please enter a name";
+        return;
+    }
+
+    
     // logging the values of the input fields to the console
     console.log(username.value);
     // converting the roll number to a number and logging it to the console
@@ -47,6 +57,12 @@ form.addEventListener("submit",function(event){
     const marks = cleaned.map(function(n){
         return Number(n);
     });
+        for(let i =0;i<marks.length;i++){
+        if(marks[i] < 0 || marks[i]>100||isNaN(marks[i])){
+            errorMarks.textContent = "Please enter valid marks between 0 and 100";
+            return;
+        }
+    }
 
     // logging the final array of marks to the console
     console.log(marks);
@@ -55,6 +71,9 @@ form.addEventListener("submit",function(event){
     const student = new Student(username.value,convert,marks);
     // adding the new student to the students array
     students.push(student);
+    form.reset();
+    errorMsg.textContent = "";
+    errorMarks.textContent = "";
 
 // calculating the total marks and average for the student
         let boxs = 0;
